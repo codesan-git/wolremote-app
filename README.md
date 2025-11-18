@@ -1,52 +1,56 @@
 ### Feature 
-- [ ] wake up a remote pc (that remote pc using linux) 
-- [ ] ssh to that remote pc 
-- [ ] run a specific program inside that remote pc 
-- [ ] stop that specific program on that remote pc 
-- [ ] turn off that remote pc
-- [ ] support multiple client
+- [x] wake up a remote pc (that remote pc using linux) 
+- [x] check if remote pc is online or offline
+- [x] turn off remote pc
+- [x] ssh to remote pc 
+- [x] disconnect ssh from remote pc
+- [x] run a specific program inside remote pc 
+- [x] check if the program is running or not
+- [x] stop that specific program on remote pc
+- [x] create --help command to show all available commands
+- [ ] TUI that support multiple client
 
 ### CLI Commands
-to check all the command
+1. Check all available the command
 ```bash
 wolremote --help
 ```
-Wake-On-LAN
+2. Wake-On-LAN
 ```bash
 wolremote on --remote "config_1.toml"
 ```
 
-Check Remote PC Status
+3. Check Remote PC Status
 ```bash
 wolremote status --remote "config_1.toml"
 ```
 
-Turn Off Remote Comp
+4. Turn Off Remote Comp
 ```bash
 wolremote off --remote "config_1.toml"
 ```
 
-Connect via SSH
+5. Connect via SSH
 ```bash
 wolremote connect --remote "config_1.toml"
 ```
 
-disconnect from SSH
+6. Disconnect from SSH
 ```bash
 wolremote disconnect --remote "config_1.toml"
 ```
 
-Run Program
+7. Run Program
 ```bash
 wolremote run --remote "config_1.toml"
 ```
 
-Check Program
+8. Check Program
 ```bash
 wolremote check --remote "config_1.toml"
 ```
 
-Stop Program
+9. Stop Program
 ```bash
 wolremote stop --remote "config_1.toml"
 ```
@@ -62,9 +66,11 @@ wolremote stop --remote "config_1.toml"
 | 02 | 192.168.1.101 | OFFLINE   | -            | -             |
 | 03 | 192.168.1.102 | RUNNING   | exit code 1  | 5s ago        |
 +---------------------------------------------------------------+
-Commands: [P] Power ON  [O] Power OFF  [R] Restart Program
-          [S] Stop Program  [L] Logs  [Q] Quit
-          [Arrow Up] Move up [Arrow Down] Move Down
+Commands: 
+[Arrow Up] Move up [Arrow Down] Move Down
+[P] Power ON  [O] Power OFF 
+[R] Start / Restart Program [S] Stop Program 
+[Q] Quit
 ```
 
 ### Notes:
