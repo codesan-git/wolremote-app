@@ -13,6 +13,7 @@ var RootCmd = &cobra.Command{
 
 Example usage:
   wolremote on --remote "config_1.toml" (Turn on remote computer using Wake-On-LAN)
+  wolremote status --remote "config_1.toml" (Check remote PC status ON or OFF)
   wolremote off --remote "config_1.toml" (Turn off remote computer)
   wolremote connect --remote "config_1.toml" (Connect to remote computer via SSH)
   wolremote disconnect --remote "config_1.toml" (Disconnect from remote computer)

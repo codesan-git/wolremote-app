@@ -11,4 +11,4 @@ password = "your_password"
 [remote_program]
 folderPath = "/path/to/your/folder"
 programName = "./program_name"
-sudoUser = true
+sudoUser = false

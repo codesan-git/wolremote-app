@@ -16,6 +16,11 @@ Wake-On-LAN
 wolremote on --remote "config_1.toml"
 ```
 
+Check Remote PC Status
+```bash
+wolremote status --remote "config_1.toml"
+```
+
 Turn Off Remote Comp
 ```bash
 wolremote off --remote "config_1.toml"
