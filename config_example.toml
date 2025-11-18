@@ -1,0 +1,14 @@
+[client]
+macAddress = "XX:XX:XX:XX:XX:XX"
+broadcastIP = "192.168.1.255"
+
+[ssh]
+host = "192.168.1.100"
+port = 22
+user = "your_username"
+password = "your_password"
+
+[remote_program]
+folderPath = "/path/to/your/folder"
+programName = "./program_name"
+sudoUser = true
