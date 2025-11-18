@@ -55,26 +55,49 @@ wolremote check --remote "config_1.toml"
 wolremote stop --remote "config_1.toml"
 ```
 
-### TUI Reference
-```
-+---------------------------------------------------------------+
-|                 REMOTE PC CONTROLLER (v1.0)                   |
-+---------------------------------------------------------------+
-| ID | Host          | Status    | Program      | Last Update   |
-|----+---------------+-----------+--------------+---------------|
-| 01 | 192.168.1.100 | RUNNING   | ok           | 10s ago       |
-| 02 | 192.168.1.101 | OFFLINE   | -            | -             |
-| 03 | 192.168.1.102 | RUNNING   | exit code 1  | 5s ago        |
-+---------------------------------------------------------------+
-Commands: 
-[Arrow Up] Move up [Arrow Down] Move Down
-[P] Power ON  [O] Power OFF 
-[R] Start / Restart Program [S] Stop Program 
-[Q] Quit
-```
-
 ### Notes:
 command to check in remote pc
 ```bash
 ps aux | grep wolidar-linux-amd64
 ```
+
+### TUI Reference
+```
++---------------------------------------------------------------+
+|                 REMOTE PC CONTROLLER (v2.0)                   |
++---------------------------------------------------------------+
+| ID | Host          | Status    | Program      | Last Update   |
+|----+---------------+-----------+--------------+---------------|
+| 01 | 192.168.1.100 | ONLINE    | RUNNING      | 10s ago       |
+| 02 | 192.168.1.101 | OFFLINE   | STOPPED      | 1m ago        |
+| 03 | 192.168.1.102 | ONLINE    | STOPPED      | 5s ago        |
++---------------------------------------------------------------+
+Commands: 
+[↑] Move up
+[↓] Move Down
+[P] Power ON
+[O] Power OFF 
+[X] Start Program 
+[S] Stop Program
+[R] Refresh table
+[Q] Quit
+```
+
+### Step by Step for building UI
+- [ ] create table
+- [ ] list all config(s) (indexing)
+- [ ] pass config value to new table row (ID = index, IP = get from toml file)
+- [ ] navigate row using arrow keyboard ` [Arrow Up | Arrow Down] `
+- [ ] quit application ` [Q] `
+- [ ] execute wake-on-lan based on row (will update STATUS and LAST UPATE column for that row) ` [P] `
+- [ ] execute turn off based on row (will update STATUS, PROGRAM and LAST UPATE column, this also automatically call stop program command for that row) ` [O] `
+- [ ] execute run program based on row (will update PROGRAM and LAST UPATE column for that row) ` [X] `
+- [ ] execute stop program based on row (will update PROGRAM and LAST UPATE column for that row) ` [S] `
+- [ ] execute check pc status and program globally (will update STATUS, PROGRAM and LAST UPATE column globally) ` [R] `
+- [ ] check pc status and program globally when opening the app (will update STATUS, PROGRAM and LAST UPATE column globally)
+- [ ] add hotkeys information
+
+### Library
+- bubbletea (core tui library) [https://github.com/charmbracelet/bubbletea]
+- lipgloss (styling) [https://github.com/charmbracelet/lipgloss]
+- bubbles (reference component) [https://github.com/charmbracelet/bubbles]
