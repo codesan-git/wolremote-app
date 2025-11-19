@@ -7,17 +7,17 @@ set WINDOWS_OUTPUT=remote-cli.exe
 REM Build for Linux
 set GOOS=linux
 set GOARCH=amd64
-go build -o %LINUX_OUTPUT% cli/cmd/main.go
+go build -o %LINUX_OUTPUT% cmd/main.go
 
 REM Build for macOS
 set GOOS=darwin
 set GOARCH=arm64
-go build -o %MAC_OUTPUT% cli/cmd/main.go
+go build -o %MAC_OUTPUT% cmd/main.go
 
 REM Build for Windows
 set GOOS=windows
 set GOARCH=amd64
-go build -o %WINDOWS_OUTPUT% cli/cmd/main.go
+go build -o %WINDOWS_OUTPUT% cmd/main.go
 
 REM Check for build success
 if %ERRORLEVEL% equ 0 (
